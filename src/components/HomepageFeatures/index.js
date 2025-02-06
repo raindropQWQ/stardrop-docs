@@ -5,20 +5,24 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: '2025 新年快乐!',
-    Png: require('@site/static/img/2025sfGroupPhoto.png').default,
+    imgSrc: require('@site/static/img/2025sfGroupPhoto.png').default,
     description: (
-      <>
-        2025.01.29
-      </>
+    <>
+      2025.01.29
+    </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({imgSrc, title, description}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img
+          src={imgSrc} 
+          className={styles.featureSvg} 
+          alt={title}
+        />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
